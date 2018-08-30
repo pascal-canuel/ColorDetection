@@ -1,0 +1,8 @@
+﻿  CGrabber.cpp
+c:\users\usager\downloads\vsopencv-dev\vsopencv-dev\visionlab1\cgrabber.cpp(94): warning C4267: '=' : conversion de 'size_t' en 'int', perte possible de données
+c:\users\usager\downloads\vsopencv-dev\vsopencv-dev\visionlab1\cgrabber.cpp(98): warning C4267: '=' : conversion de 'size_t' en 'int', perte possible de données
+  VisionLab1.cpp
+c:\users\usager\downloads\vsopencv-dev\vsopencv-dev\visionlab1\visionlab1.cpp(33): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+c:\users\usager\downloads\vsopencv-dev\vsopencv-dev\visionlab1\visionlab1.cpp(34): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+  Génération de code en cours...
+  VisionLab1.vcxproj -> C:\Users\usager\Downloads\VSOpenCV-dev\VSOpenCV-dev\x64\Debug\VisionLab1.exe
