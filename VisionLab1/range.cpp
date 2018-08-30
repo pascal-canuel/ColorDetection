@@ -6,4 +6,7 @@ range::range(cv::Scalar pMinScalar, cv::Scalar pMaxScalar, cv::Scalar pBgrScalar
 	maxScalar = pMaxScalar;
 	bgrScalar = pBgrScalar;
 	nameColor = pNameColor;
+
+	nbPixel = 0;
+	execTime = 0;
 }

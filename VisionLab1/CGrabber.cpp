@@ -2,6 +2,8 @@
 #include "CGrabber.h"
 #include "range.h"
 #include <map>
+#include <iostream>
+#include <fstream>
 
 RNG rng(12345);
 // Links 
@@ -87,7 +89,7 @@ std::tuple<cv::Mat, cv::Mat> CGrabber::drawColorScalar(std::vector<range>::itera
 	int secondLargestContour = 0;
 
 	for (int i = 0; i < contours.size(); i++)
-	{		
+	{
 		if (contours[i].size() > largestContour) {
 			secondLargestContour = largestContour;
 			secondLargestIndex = largestIndex;
@@ -97,14 +99,16 @@ std::tuple<cv::Mat, cv::Mat> CGrabber::drawColorScalar(std::vector<range>::itera
 		else if (contours[i].size() > secondLargestContour) {
 			secondLargestContour = contours[i].size();
 			secondLargestIndex = i;
-		}	
+		}
 	}
 
 	drawContours(drawing, contours, largestIndex, pIt->bgrScalar, 2, 8, hierarchy, 0, Point());
 	drawContours(drawing, contours, secondLargestIndex, pIt->bgrScalar, 2, 8, hierarchy, 0, Point());
-	
+
 	double sec = ((double)cv::getTickCount() - init) / cv::getTickFrequency();
 	std::cout << pIt->nameColor << " " << sec << " sec" << std::endl;
+	pIt->nbPixel += 1;
+	pIt->execTime = pIt->execTime + ((sec - pIt->execTime)/ pIt->nbPixel);
 
 	return std::pair<Mat, Mat>(currentFrame, drawing);
 }
@@ -128,4 +132,15 @@ void CGrabber::initStats()
 
 void CGrabber::stopStats()
 {
+	double totalPix = 0;
+
+	std::ofstream myfile;
+	myfile.open("../stat/example.txt");
+	for (it = colorToDetect.begin(); it < colorToDetect.end(); it++) {
+		myfile << it->nameColor << " " << it->execTime << "/r/n";
+		totalPix += it->nbPixel;
+	}
+
+	myfile << "Total Pixels: " << totalPix << "/r/n";
+	myfile.close();
 }

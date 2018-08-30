@@ -57,6 +57,8 @@ int main()
 	video.release();
 	grab.release();
 
+	grab.stopStats();
+
 	//	Closes all the windows
 	destroyAllWindows();
 	return 0;
