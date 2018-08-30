@@ -58,7 +58,6 @@ int main()
 	grab.release();
 
 	grab.stopStats();
-
 	//	Closes all the windows
 	destroyAllWindows();
 	return 0;

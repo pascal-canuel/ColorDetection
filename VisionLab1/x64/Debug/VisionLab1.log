@@ -1,10 +1,4 @@
-﻿  pch.cpp
-  CGrabber.cpp
+﻿  CGrabber.cpp
 c:\users\usager\downloads\vsopencv-dev\colordetection\visionlab1\cgrabber.cpp(96): warning C4267: '=' : conversion de 'size_t' en 'int', perte possible de données
 c:\users\usager\downloads\vsopencv-dev\colordetection\visionlab1\cgrabber.cpp(100): warning C4267: '=' : conversion de 'size_t' en 'int', perte possible de données
-  range.cpp
-  VisionLab1.cpp
-c:\users\usager\downloads\vsopencv-dev\colordetection\visionlab1\visionlab1.cpp(33): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
-c:\users\usager\downloads\vsopencv-dev\colordetection\visionlab1\visionlab1.cpp(34): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
-  Génération de code en cours...
   VisionLab1.vcxproj -> C:\Users\usager\Downloads\VSOpenCV-dev\ColorDetection\x64\Debug\VisionLab1.exe

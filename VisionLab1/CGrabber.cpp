@@ -142,5 +142,5 @@ void CGrabber::stopStats()
 	}
 
 	myfile << "Total Pixels: " << totalPix << "/r/n";
-	myfile.close();
+	  myfile.close();
 }
