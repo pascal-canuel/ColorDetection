@@ -6,10 +6,6 @@
 #include <fstream>
 
 RNG rng(12345);
-// Links 
-// https://docs.opencv.org/3.4/d5/d69/tutorial_py_non_local_means.html
-// https://docs.opencv.org/3.4/da/d97/tutorial_threshold_inRange.html
-// https://www.opencv-srf.com/2010/09/object-detection-using-color-seperation.html
 
 CGrabber::CGrabber() {
 	iLowH = 0;
@@ -60,14 +56,10 @@ void CGrabber::getHSV(Mat pColor) {
 		}
 	}
 
-	videoThreshold.write(result);
-
 	namedWindow("Threshed", WINDOW_NORMAL);
 	resizeWindow("Threshed", 700, 500);
 	imshow("Threshed", result);
 	
-	videoContour.write(drawingResult);
-
 	namedWindow("Contours");
 	imshow("Contours", drawingResult);
 }
@@ -107,40 +99,6 @@ std::tuple<cv::Mat, cv::Mat> CGrabber::drawColorScalar(std::vector<range>::itera
 
 	double sec = ((double)cv::getTickCount() - init) / cv::getTickFrequency();
 	std::cout << pIt->nameColor << " " << sec << " sec" << std::endl;
-	pIt->nbPixel += 1;
-	pIt->execTime = pIt->execTime + ((sec - pIt->execTime)/ pIt->nbPixel);
 
 	return std::pair<Mat, Mat>(currentFrame, drawing);
-}
-
-void CGrabber::initVideo(int widthFrame, int heightFrame) {
-	frame_width = widthFrame;
-	frame_height = heightFrame;
-
-	videoThreshold = VideoWriter("../video/outTreshold.avi", CV_FOURCC('M', 'J', 'P', 'G'), 10, Size(frame_width, frame_height));
-	videoContour = VideoWriter("../video/outContour.avi", CV_FOURCC('M', 'J', 'P', 'G'), 10, Size(frame_width, frame_height));
-}
-
-void CGrabber::release() {
-	videoThreshold.release();
-	videoContour.release();
-}
-
-void CGrabber::initStats()
-{
-}
-
-void CGrabber::stopStats()
-{
-	double totalPix = 0;
-
-	std::ofstream myfile;
-	myfile.open("../stat/example.txt");
-	for (it = colorToDetect.begin(); it < colorToDetect.end(); it++) {
-		myfile << it->nameColor << " " << it->execTime << "/r/n";
-		totalPix += it->nbPixel;
-	}
-
-	myfile << "Total Pixels: " << totalPix << "/r/n";
-	  myfile.close();
 }

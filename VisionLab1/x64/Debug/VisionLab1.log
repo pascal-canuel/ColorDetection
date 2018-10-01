@@ -1,4 +1,2 @@
-﻿  CGrabber.cpp
-c:\users\usager\downloads\vsopencv-dev\colordetection\visionlab1\cgrabber.cpp(96): warning C4267: '=' : conversion de 'size_t' en 'int', perte possible de données
-c:\users\usager\downloads\vsopencv-dev\colordetection\visionlab1\cgrabber.cpp(100): warning C4267: '=' : conversion de 'size_t' en 'int', perte possible de données
-  VisionLab1.vcxproj -> C:\Users\usager\Downloads\VSOpenCV-dev\ColorDetection\x64\Debug\VisionLab1.exe
+﻿  VisionLab1.cpp
+  VisionLab1.vcxproj -> C:\Users\Pascal\Desktop\remise-vision\Lab2_PascalC_JustinRL\x64\Debug\VisionLab1.exe

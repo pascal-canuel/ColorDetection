@@ -7,8 +7,6 @@ public:
 	cv::Scalar maxScalar;
 	cv::Scalar bgrScalar;
 	std::string nameColor;
-	double nbPixel;
-	double execTime;
 	
 	range(cv::Scalar pMinScalar, cv::Scalar pMaxScalar, cv::Scalar pBgrScalar, std::string pNameColor);
 };
